@@ -15,13 +15,46 @@ namespace _5112_Cumulative_1_2_3.Controllers
             return View();
         }
 
-        //Get: /Teacher/List
+        //Get : /Teacher/List
         public ActionResult List(string SearchKey = null)
         {
-            TeachersDataController controller = new TeachersDataController();   
+            TeachersDataController controller = new TeachersDataController();
             IEnumerable<Teacher> Teachers = controller.ListTeachers(SearchKey);
             return View(Teachers);
         }
+
+        //Get: /Teacher/Teachersfname
+        public ActionResult Teachersfname(string Searchfname = null)
+        {
+            TeachersDataController controller = new TeachersDataController();   
+            IEnumerable<Teacher> Teachers = controller.Teachersfname(Searchfname);
+            return View(Teachers);
+        }
+
+        //Get: /Teacher/Teacherslname
+        public ActionResult Teacherslname(string Searchlname = null)
+        {
+            TeachersDataController controller = new TeachersDataController();
+            IEnumerable<Teacher> Teachers = controller.Teacherslname(Searchlname);
+            return View(Teachers);
+        }
+
+        //Get: /Teacher/TeachersHiredate
+        public ActionResult TeachersHiredate(DateTime Searchdate)
+        {
+            TeachersDataController controller = new TeachersDataController();
+            IEnumerable<Teacher> Teachers = controller.TeachersHiredate(Searchdate);
+            return View(Teachers);
+        }
+
+        //Get: /Teacher/TeachersSalary
+        public ActionResult TeachersSalary(Decimal Searchsalary)
+        {
+            TeachersDataController controller = new TeachersDataController();
+            IEnumerable<Teacher> Teachers = controller.TeachersSalary(Searchsalary.ToString());
+            return View(Teachers);
+        }
+
 
         //Get: /Teacher/Show/{id}
         public ActionResult Show(int id)

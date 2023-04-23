@@ -5,32 +5,40 @@
 
 <div id="containlist">
     <h2>List</h2>
-    <form action="/Teacher/List" method="GET">
-        <div>
-            <input type="text" name="SearchKey" />
+    <form >
+        <div action="/Teacher/List" method="GET">
+            <input type="text" name="Searchkey" />
 
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="SearchKey" />
+            <div action="/Teacher/Teachersfname" method="GET">
+                <input class="form-check-input" type="checkbox" name="Searchfname" />
                 <lable class="form-check-label">Search by First Name</lable>
             </div>
 
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="SearchKey" />
+            <div  action="/Teacher/Teacherslname" method="GET">
+                <input class="form-check-input" type="checkbox" name="Searchlname" />
                 <label class="form-check-label">Search by Last Name</label>
             </div>
 
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="SearchKey" />
+            <div action="/Teacher/TeachersHiredate" method="GET">
+                <input class="form-check-input" type="checkbox" name="Searchdate" />
                 <label class="form-check-label">Search by Hire Date</label>
             </div>
 
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="SearchKey" />
+            <div  action="/Teacher/TeachersSalary" method="GET">
+                <input class="form-check-input" type="checkbox" name="Searchsalary" />
                 <label class="form-check-label">Search by Salary</label>
             </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Search</button>
     </form>
+
+    @foreach (var Teacher in Model)
+            {
+                <div>@Teacher.Teacherfname</div>
+                <div>@Teacher.Teacherlname</div>
+                <div>@Teacher.Hiredate</div>
+                <div>@Teacher.Salary</div>
+            }
 
 </div>
